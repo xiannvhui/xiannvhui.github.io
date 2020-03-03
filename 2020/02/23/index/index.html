@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/fruit/">fruit</a></li><li><a class="category-link" href="/categories/study/">study</a>
+	                        <a class="category-link" href="/categories/fruit/">fruit</a></li><li><a class="category-link" href="/categories/knowledge/">knowledge</a></li><li><a class="category-link" href="/categories/study/">study</a>
 	                    </ul>
 	        </li>
 	        
@@ -151,24 +151,54 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Hello World</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583253085074&amp;di=4032bca1827e42b23508012a85519f4b&amp;imgtype=0&amp;src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fbd38d0d4a5d88be653a8f28703981c1b3f6d5f54381f2-YUCxPk_fw658);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >我也要开家水果店</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start<a href="#quick-start" title="Quick Start"></a></h2><h3 id="create-a-new-post">Create a new post<a href="#create-a-new-post" title="Create a new post"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                  <p style="font-size:18px;">✿这里来说说新来的水果页面吧<br>
+  第一个作业的重点应该是水果的添加了，其实也很简单了，一想到我之前写这个页面竟然自己编了一个数据库，心痛。<br>
+   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <img style="width: 220px;height: 220px;"src="https://s2.ax1x.com/2020/03/03/34oiUf.jpg"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<img style="width: 220px;height: 220px;" src="https://s2.ax1x.com/2020/03/03/34oJxJ.jpg">
+   <pre><code>
+    public class FruitFatory2 {
+    public ArrayList< fruit2> getFruitList(){
+    ArrayList< fruit2> fruits =new ArrayList<fruit2>();
+        fruits.add(new fruit2("桃子","1.jpg"));
+        fruits.add(new fruit2("葡萄","2.jpg"));
+        fruits.add(new fruit2("山竹","3.jpg"));
+        fruits.add(new fruit2("西瓜","4.jpg"));
+        fruits.add(new fruit2("菠萝","5.jpg"));
+    return fruits;
+}
+}
+</code></pre>
+   <p style="font-size:18px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二个就是这两天要完成的升级版水果店了，改模板也是个麻烦活，仿佛回到上学期的大作业。也是刚知道原来F12可以直接查看代码对应的作用区域，一想到上学期是一段一段去试去改，心里哇凉。<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这次的难点应该就是getFruitId了,括号里面的参数真是难到我了，试了好几次才成功
+                       <pre><code>
+  public static Fruit getFruitById(int id,ArrayList< Fruit> fruits )
+{
+for(int i=0;i< fruits.size();i++)
+{
+    if(fruits.get(i).id==id)
+    return fruits.get(i);
+}
+    return null;
+}
+<hr>
+< %
+    FruitFactory fruitFactory=new FruitFactory();
+    ArrayList< Fruit> list = fruitFactory.getFruitList();    
+    Fruit fruit=fruitFactory.getFruitById(Integer.parseInt(request.getParameter("id")), list);
+    if(fruit!=null)
+    {    
+%>
+                       </code></pre>
+                        </p>
+<a href="http://115.29.176.60:8080/fruitProj2/shop-full-width.jsp" target="_blank" rel="noopener">☞这就是我的水果网页</a>
+<img style="width:300px;height: 300px;" src="https://s2.ax1x.com/2020/03/03/34o2qI.jpg">
+<p style="text-align:center;color:gray;">-------本文结束 ❤ 感谢您的阅读-------</p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank">Writing</a></p>
-<h3 id="run-server">Run server<a href="#run-server" title="Run server"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank">Server</a></p>
-<h3 id="generate-static-files">Generate static files<a href="#generate-static-files" title="Generate static files"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites<a href="#deploy-to-remote-sites" title="Deploy to remote sites"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank">Deployment</a></p>
 
             </div>
 
@@ -231,8 +261,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/03/01/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2020/03/01/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2020/02/23/index/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/02/23/index/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
