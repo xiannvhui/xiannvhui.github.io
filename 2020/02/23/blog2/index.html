@@ -164,12 +164,12 @@
   <img src="https://s2.ax1x.com/2020/03/03/34Hnrd.png">
 <pre><code>
     code {
-
-<pre><code>String loginUser=&quot;未登录&quot;;
-   if(session.getAttribute(&quot;loginUser&quot;)!=null)
-   {
-       loginUser=session.getAttribute(&quot;loginUser&quot;).toString();
-   }    </code></pre><p></code></pre></p>
+        String loginUser="未登录";
+           if(session.getAttribute("loginUser")!=null)
+           {
+               loginUser=session.getAttribute("loginUser").toString();
+           }    
+</code></pre>
 </p>
  <p style="font-size:18px;">❉接着就是升级版啦,升级版的难点就多了不少<br>
  1.页面不跳转，弹出一个提示信息，告知用户商品已经加入购物车，页面顶部购物袋的数字加1。
