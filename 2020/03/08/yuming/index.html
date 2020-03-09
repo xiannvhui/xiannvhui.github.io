@@ -165,22 +165,22 @@
                 <p>搞完了hexo当然要整一个自定义域名玩玩，现在百度云`.top`首年只需要一块大洋就可以搞到，欲购从速啊<br>
 下面来讲讲更换教程</p>
 Github本身自带的域名(.github.io)是支持https服务的，但是如果自定义的域名，你会发现仓库【Setting】-【GitHub】下的【Enforce HTTPS】是灰色的无法勾选，所以我利用Cloudflare的CDN来启用 HTTPS。<br>
-<p style="color:red;font-size:22px;">·注册域名</p><br>
+<p style="color:red;font-size:22px;">·注册域名</p>
 我是在阿里云上面买的域名,首年9块钱
 <img src="https://s2.ax1x.com/2020/03/09/8S75yF.png">结算时需要一个域名信息，没有的话要添加，需要邮箱验证以及实名认证，说是两三个工作日内会审核，但我几分钟就审核完成了
 <img src="https://s2.ax1x.com/2020/03/09/8SHy6O.png">
 <img src="https://s2.ax1x.com/2020/03/09/8SHgne.png"><br>
-<p style="color:red;font-size:22px;">·域名解析</p><br>
+<p style="color:red;font-size:22px;">·域名解析</p>
 阿里云后台->侧边栏选择域名->点击刚注册的域名->侧边栏再选择域名解析，进入到该域名的域名解析设置页<br>
 先用ping yourusername.github.io查询你的guihub主页对应的ip地址
 <img src="https://s2.ax1x.com/2020/03/09/8Sb8UA.png">
 然后在域名解析设置里添加两条记录：
 <img src="https://s2.ax1x.com/2020/03/09/8SqZZQ.jpg"><br>
-<p style="color:red;font-size:22px;">·CNAME文件<br>
+<p style="color:red;font-size:22px;">·CNAME文件</p>
 最后在文件夹【myblog】-【source】目录下新增一个文件命名为CNAME(注意不要后缀名)，内容设置为申请的域名xiannvhui.top
 <img src="https://s2.ax1x.com/2020/03/09/8Sqyee.png">
 现在自定义域名就可以使用了，但是是http服务，我们把它设为https服务。<br>
-<p style="color:red;font-size:22px;">·注册Cloudflare</p><br>
+<p style="color:red;font-size:22px;">·注册Cloudflare</p>
 到<a href="https://dash.cloudflare.com/login" target="_blank" rel="noopener">Cloudflare</a>官网 注册账号
 <img src="https://s2.ax1x.com/2020/03/09/8SOV4s.png">
 <p style="color:red;font-size:22px;">·添加站点</p>
@@ -190,17 +190,17 @@ Github本身自带的域名(.github.io)是支持https服务的，但是如果自
 <img src="https://s2.ax1x.com/2020/03/09/8SXixx.png">
 <img src="https://s2.ax1x.com/2020/03/09/8SXede.png">
 在阿里云修改dns，大概需要2-3小时，会显示出修改后的dns。在CloudFlare 上激活站点后，可能需要24小时才能颁发新证书，耐心等待即可，我是第二天早上再重新打开的
-<p style="color:red;font-size:22px;">·开启HTTPS
+<p style="color:red;font-size:22px;">·开启HTTPS</p>
 在 Cloudflare 管理页面，点击【Crypto】选项，选择 SSL 的模式为【full】
 <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL1RSSFgvSW1hZ2VIb3N0aW5nL0lUUkhYLVBJQy9BMjYvMDcucG5n">
 但是当用户输入 http://xxxxxx 访问时，浏览器依旧会以 http 协议来访问，并不会跳转到 https，这时候就需要利用重定向来解决了<br>
-<p style="color:red;font-size:22px;">·重定向强制 HTTPS</p><br>
+<p style="color:red;font-size:22px;">·重定向强制 HTTPS</p>
 点击【Page Rules】选项，点击【Create Page Rules】，新建如下规则并保存即可
 <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL1RSSFgvSW1hZ2VIb3N0aW5nL0lUUkhYLVBJQy9BMjYvMDYucG5n">
 这样就大功告成啦！<br>
 当然还有另一种方法，大家可以参考：<a href="https://www.jianshu.com/p/8046a12" target="_blank" rel="noopener">Hexo 博客之添加 https
 </a><br>
-文章参考来源：<a href="https://blog.csdn.net/qq_36759224/article/details/98057466" target="_blank" rel="noopener">1.利用Cloudflare为基于GitHub Pages的Hexo博客添加HTTPS支持</a><br><br>
+文章参考来源：<br><a href="https://blog.csdn.net/qq_36759224/article/details/98057466" target="_blank" rel="noopener">1.利用Cloudflare为基于GitHub Pages的Hexo博客添加HTTPS支持</a><br>
 <a href="https://blog.csdn.net/mqdxiaoxiao/article/details/92799543" target="_blank" rel="noopener">2.Hexo个人博客绑定域名
 </a>
 <p style="text-align:center;color:gray;">-------本文结束 ❤ 感谢您的阅读-------</p>
