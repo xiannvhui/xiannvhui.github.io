@@ -157,15 +157,12 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ajax</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://s1.ax1x.com/2020/04/19/JKePiD.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >初学ajax</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <hr>
-<p>layout: ‘[post]’<br>title: 初学ajax<br>date: 2020-04-19 11:28:28<br>categories: study<br>thumbnail: <a href="https://s1.ax1x.com/2020/04/19/JKePiD.jpg" target="_blank" rel="noopener">https://s1.ax1x.com/2020/04/19/JKePiD.jpg</a></p>
-<hr>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAX是指一种创建交互式网页应用的网页开发技术。AJAX可以在不重新加载整个页面的情况下，与服务器交换数据。这种异步交互的方式，使用户单击后，不必刷新页面也能获取新数据。使用Ajax，用户可以创建接近本地桌面应用的直接、高可用、更丰富、更动态的Web用户界面。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAX是指一种创建交互式网页应用的网页开发技术。AJAX可以在不重新加载整个页面的情况下，与服务器交换数据。这种异步交互的方式，使用户单击后，不必刷新页面也能获取新数据。使用Ajax，用户可以创建接近本地桌面应用的直接、高可用、更丰富、更动态的Web用户界面。</p>
 
 <h3>利用AJAX可以做：</h3>
 <p> •注册时，输入用户名自动检测用户是否已经存在。<br>
@@ -180,10 +177,49 @@
      &nbsp;&nbsp;  url：  要请求的地址（字符串类型）<br>
       &nbsp;&nbsp;  async： 是否异步（布尔类型）<br>
    2. void send(String body) 用于发送请求<br>
+      &nbsp;&nbsp;  参数：<br>
+       &nbsp;&nbsp;   body： 要发送的数据（字符串类型）<br>
+    3. void setRequestHeader(String header,String value)
+  用于设置请求头<br>
+  &nbsp;&nbsp;   参数：<br>
+  &nbsp;&nbsp;   header： 请求头的key（字符串类型）<br>
+  &nbsp;&nbsp;   vlaue： 请求头的value（字符串类型）
+  </code></p>
+  <h4> 二、get请求</h4>
+  <p>GET用于向服务器查询某些信息：</p>
+   <code>
+        xmlhttp.open("GET","demo_get.asp",true);<br>
+        xmlhttp.send();
+    </code>
+  <h4> 三、post请求</h4>
+   <p>POST请求用于向服务器发送应该被保存的数据。POST请求的主体可以包含非常多的数据，而且格式不限。</p>
+    <code>
+        xmlhttp.open("POST","demo_get.asp",true);<br>
+        xmlhttp.send();
+    </code>
+   <h3 style="color: red;">jquery ajax</h3>
+   <p>通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</p>
+   <code>
+      1. jQuery.get(...)<br>
+      &nbsp; 所有参数：<br>
+     &nbsp;&nbsp;   url: 待载入页面的URL地址<br>
+      &nbsp;&nbsp;  data: 待发送 Key/value 参数。<br>
+      &nbsp;&nbsp;  success: 载入成功时回调函数。<br>
+        &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html<br>
+   2.jQuery.post(...)<br>
+    &nbsp;  所有参数：<br>
+        &nbsp;&nbsp;     url: 待载入页面的URL地址<br>
+        &nbsp;&nbsp;    data: 待发送 Key/value 参数<br>
+        &nbsp;&nbsp;    success: 载入成功时回调函数<br>
+         &nbsp;&nbsp;   dataType: 返回内容格式，xml, json, script, text, html<br>
+         3.jQuery.ajax(...)<br>
+         &nbsp;     部分参数：<br>
+         &nbsp;&nbsp;      url：请求地址<br>
+         &nbsp;&nbsp;      type：请求方式，GET、POST（1.9.0之后用method）<br>
+         &nbsp;&nbsp;    headers：请求头<br>
+       &nbsp;&nbsp;      data：要发送的数据<br>
+         &nbsp;&nbsp;    contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")<br>
 
-<pre><code>   &amp;nbsp;&amp;nbsp;  参数：&lt;br&gt;
-   &amp;nbsp;&amp;nbsp;   body： 要发送的数据（字符串类型）&lt;br&gt;
-3. void setRequestHeader(String header,String value)</code></pre><p>  用于设置请求头<br><br>  &nbsp;&nbsp;   参数：<br><br>  &nbsp;&nbsp;   header： 请求头的key（字符串类型）<br><br>  &nbsp;&nbsp;   vlaue： 请求头的value（字符串类型）<br>  </code></p><br>  <h4> 二、get请求</h4><br>  <p>GET用于向服务器查询某些信息：</p><br>   <code><br>        xmlhttp.open("GET","demo_get.asp",true);<br><br>        xmlhttp.send();<br>    </code><br>  <h4> 三、post请求</h4><br>   <p>POST请求用于向服务器发送应该被保存的数据。POST请求的主体可以包含非常多的数据，而且格式不限。</p><br>    <code><br>        xmlhttp.open("POST","demo_get.asp",true);<br><br>        xmlhttp.send();<br>    </code><br>   <h3 style="color: red;">jquery ajax</h3><br>   <p>通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</p><br>   <code><br>      1. jQuery.get(...)<br><br>      &nbsp; 所有参数：<br><br>     &nbsp;&nbsp;   url: 待载入页面的URL地址<br><br>      &nbsp;&nbsp;  data: 待发送 Key/value 参数。<br><br>      &nbsp;&nbsp;  success: 载入成功时回调函数。<br><br>        &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html<br><br>   2.jQuery.post(...)<br><br>    &nbsp;  所有参数：<br><br>        &nbsp;&nbsp;     url: 待载入页面的URL地址<br><br>        &nbsp;&nbsp;    data: 待发送 Key/value 参数<br><br>        &nbsp;&nbsp;    success: 载入成功时回调函数<br><br>         &nbsp;&nbsp;   dataType: 返回内容格式，xml, json, script, text, html<br><br>         3.jQuery.ajax(...)<br><br>         &nbsp;     部分参数：<br><br>         &nbsp;&nbsp;      url：请求地址<br><br>         &nbsp;&nbsp;      type：请求方式，GET、POST（1.9.0之后用method）<br><br>         &nbsp;&nbsp;    headers：请求头<br><br>       &nbsp;&nbsp;      data：要发送的数据<br><br>         &nbsp;&nbsp;    contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")<br></p>
 <pre><code>&amp;nbsp;&amp;nbsp;    success：成功之后执行的回调函数(全局)&lt;br&gt;
 &amp;nbsp;&amp;nbsp;    error：失败之后执行的回调函数(全局)&lt;br&gt;
 
