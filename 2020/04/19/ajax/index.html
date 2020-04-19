@@ -203,28 +203,28 @@
    <pre><code>
 1. jQuery.get(...)
     &nbsp; 所有参数：
-    &nbsp;&nbsp;   url: 待载入页面的URL地址
-    &nbsp;&nbsp;  data: 待发送 Key/value 参数。
-    &nbsp;&nbsp; success: 载入成功时回调函数。     &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html
-2.jQuery.post(...)<br>
-    &nbsp;  所有参数：<br>
-     &nbsp;&nbsp;url: 待载入页面的URL地址<br>
-      &nbsp;&nbsp;data: 待发送 Key/value 参数<br>
-      &nbsp;&nbsp;success: 载入成功时回调函数<br>
-      &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html<br>
-3.jQuery.ajax(...)<br>
-       &nbsp;部分参数：<br>
-       &nbsp;&nbsp;url：请求地址<br>
-        &nbsp;&nbsp;type：请求方式，GET、POST（1.9.0之后用method）<br>
-       &nbsp;&nbsp;headers：请求头<br>
-       &nbsp;&nbsp;data：要发送的数据<br> &nbsp;&nbsp;contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")<br>   
-       &nbsp;&nbsp;success：成功之后执行的回调函数(全局)<br>
-       &nbsp;&nbsp;    error：失败之后执行的回调函数(全局)<br>        &nbsp;&nbsp;dataType：将服务器端返回的数据转换成指定类型<br>
-         &nbsp;&nbsp;xml": 将服务器端返回的内容转换成xml格式<br>
-         &nbsp;&nbsp;"text": 将服务器端返回的内容转换成普通文本格式<br>
-         &nbsp;&nbsp;"html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。<br>
-       &nbsp;&nbsp;"script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式<br>
-         &nbsp;&nbsp;"json": 将服务器端返回的内容转换成相应的JavaScript对象<br>
+    &nbsp;&nbsp;url: 待载入页面的URL地址
+    &nbsp;&nbsp;data: 待发送 Key/value 参数。
+    &nbsp;&nbsp;success: 载入成功时回调函数。     &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html
+2.jQuery.post(...)
+    &nbsp;  所有参数：
+      &nbsp;&nbsp;url: 待载入页面的URL地址
+      &nbsp;&nbsp;data: 待发送 Key/value 参数
+      &nbsp;&nbsp;success: 载入成功时回调函数
+      &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html
+3.jQuery.ajax(...)
+      &nbsp;部分参数：
+       &nbsp;&nbsp;url：请求地址
+       &nbsp;&nbsp;type：请求方式，GET、POST（1.9.0之后用method）
+       &nbsp;&nbsp;headers：请求头
+       &nbsp;&nbsp;data：要发送的数据&nbsp;&nbsp;contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")   
+       &nbsp;&nbsp;success：成功之后执行的回调函数(全局)
+       &nbsp;&nbsp;error：失败之后执行的回调函数(全局)        &nbsp;&nbsp;dataType：将服务器端返回的数据转换成指定类型
+       &nbsp;&nbsp;"xml": 将服务器端返回的内容转换成xml格式
+       &nbsp;&nbsp;"text": 将服务器端返回的内容转换成普通文本格式
+       &nbsp;&nbsp;"html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。
+       &nbsp;&nbsp;"script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式
+       &nbsp;&nbsp;"json": 将服务器端返回的内容转换成相应的JavaScript对象s
        </code></pre>
 
  <p>举个例子</p>
