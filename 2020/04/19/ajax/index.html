@@ -162,7 +162,8 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAX是指一种创建交互式网页应用的网页开发技术。AJAX可以在不重新加载整个页面的情况下，与服务器交换数据。这种异步交互的方式，使用户单击后，不必刷新页面也能获取新数据。使用Ajax，用户可以创建接近本地桌面应用的直接、高可用、更丰富、更动态的Web用户界面。</p>
+                <p style="text-align:center;">受尽实验三的折磨之后我决定好好学一学ajax</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAX是指一种创建交互式网页应用的网页开发技术。AJAX可以在不重新加载整个页面的情况下，与服务器交换数据。这种异步交互的方式，使用户单击后，不必刷新页面也能获取新数据。使用Ajax，用户可以创建接近本地桌面应用的直接、高可用、更丰富、更动态的Web用户界面。</p>
 
 <h3>利用AJAX可以做：</h3>
 <p> •注册时，输入用户名自动检测用户是否已经存在。<br>
@@ -171,9 +172,66 @@
  <h4>一、XMLHttpRequest 对象</h4>
  <p>XMLHttpRequest 是 AJAX 的基础。XMLHttpRequest 对象用于和服务器交换数据,如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：<br>
 
-<p>   <code>1. void open(String method,String url,Boolen async) 用于创建请求 <br><br> &nbsp;&nbsp;参数：<br><br> &nbsp;&nbsp;  method： 请求方式（字符串类型），如：POST、GET、DELETE...<br><br> &nbsp;&nbsp;  url：  要请求的地址（字符串类型）<br><br>  &nbsp;&nbsp;  async： 是否异步（布尔类型）<br><br>   2. void send(String body) 用于发送请求<br><br>  &nbsp;&nbsp;  参数：<br><br>   &nbsp;&nbsp;   body： 要发送的数据（字符串类型）<br><br>3. void setRequestHeader(String header,String value)<br>  用于设置请求头<br><br>  &nbsp;&nbsp;   参数：<br><br>  &nbsp;&nbsp;   header： 请求头的key（字符串类型）<br><br>  &nbsp;&nbsp;   vlaue： 请求头的value（字符串类型）</code><br>  </p><br>  <h4> 二、get请求</h4><br>  <p>GET用于向服务器查询某些信息：</p><br>   <code><br>        xmlhttp.open("GET","demo_get.asp",true);<br><br>        xmlhttp.send();<br>    </code><br>  <h4> 三、post请求</h4><br>   <p>POST请求用于向服务器发送应该被保存的数据。POST请求的主体可以包含非常多的数据，而且格式不限。</p><br>    <code><br>        xmlhttp.open("POST","demo_get.asp",true);<br><br>        xmlhttp.send();<br>    </code><br>   <h3 style="color: red;">jquery ajax</h3><br>   <p>通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</p><br>   <code><br>      1. jQuery.get(...)<br><br>      &nbsp; 所有参数：<br><br>     &nbsp;&nbsp;   url: 待载入页面的URL地址<br><br>      &nbsp;&nbsp;  data: 待发送 Key/value 参数。<br><br>      &nbsp;&nbsp;  success: 载入成功时回调函数。<br><br>        &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html<br><br>   2.jQuery.post(...)<br><br>    &nbsp;  所有参数：<br><br>        &nbsp;&nbsp;     url: 待载入页面的URL地址<br><br>        &nbsp;&nbsp;    data: 待发送 Key/value 参数<br><br>        &nbsp;&nbsp;    success: 载入成功时回调函数<br><br>         &nbsp;&nbsp;   dataType: 返回内容格式，xml, json, script, text, html<br><br>         3.jQuery.ajax(...)<br><br>         &nbsp;     部分参数：<br><br>         &nbsp;&nbsp;      url：请求地址<br><br>         &nbsp;&nbsp;      type：请求方式，GET、POST（1.9.0之后用method）<br><br>         &nbsp;&nbsp;    headers：请求头<br><br>       &nbsp;&nbsp;      data：要发送的数据<br><br>         &nbsp;&nbsp;    contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")<br><br>       &nbsp;&nbsp;success：成功之后执行的回调函数(全局)<br><br>       &nbsp;&nbsp;    error：失败之后执行的回调函数(全局)<br><br>         &nbsp;&nbsp;  dataType：将服务器端返回的数据转换成指定类型<br><br>         &nbsp;&nbsp;  "xml": 将服务器端返回的内容转换成xml格式<br><br>         &nbsp;&nbsp;  "text": 将服务器端返回的内容转换成普通文本格式<br><br>         &nbsp;&nbsp;   "html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。<br><br>         &nbsp;&nbsp;  "script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式<br><br>          &nbsp;&nbsp;   "json": 将服务器端返回的内容转换成相应的JavaScript对象<br></p>
+   <pre><code>1. void open(String method,String url,Boolen async) 用于创建请求 <br>  
+ &nbsp;&nbsp;参数：<br>
+ &nbsp;&nbsp;  method： 请求方式（字符串类型），如：POST、GET、DELETE...<br>
+ &nbsp;&nbsp;  url：  要请求的地址（字符串类型）<br>
+  &nbsp;&nbsp;  async： 是否异步（布尔类型）<br>
+   2. void send(String body) 用于发送请求<br>
+  &nbsp;&nbsp;  参数：<br>
+   &nbsp;&nbsp;   body： 要发送的数据（字符串类型）<br>
+3. void setRequestHeader(String header,String value)
+  用于设置请求头<br>
+  &nbsp;&nbsp;   参数：<br>
+  &nbsp;&nbsp;   header： 请求头的key（字符串类型）<br>
+  &nbsp;&nbsp;   vlaue： 请求头的value（字符串类型）</code></pre>
+  </p>
+  <h4> 二、get请求</h4>
+  <p>GET用于向服务器查询某些信息：</p>
+   <pre><code>
+        xmlhttp.open("GET","demo_get.asp",true);<br>
+        xmlhttp.send();
+    </code></pre>
+  <h4> 三、post请求</h4>
+   <p>POST请求用于向服务器发送应该被保存的数据。POST请求的主体可以包含非常多的数据，而且格式不限。</p>
+   <pre> <code>
+        xmlhttp.open("POST","demo_get.asp",true);<br>
+        xmlhttp.send();
+    </code></pre>
+   <h3 style="color: red;">jquery ajax</h3>
+   <p>通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。</p>
+   <pre><code>
+      1. jQuery.get(...)<br>
+      &nbsp; 所有参数：<br>
+     &nbsp;&nbsp;   url: 待载入页面的URL地址<br>
+      &nbsp;&nbsp;  data: 待发送 Key/value 参数。<br>
+      &nbsp;&nbsp;  success: 载入成功时回调函数。<br>
+        &nbsp;&nbsp;dataType: 返回内容格式，xml, json, script, text, html<br>
+   2.jQuery.post(...)<br>
+    &nbsp;  所有参数：<br>
+        &nbsp;&nbsp;     url: 待载入页面的URL地址<br>
+        &nbsp;&nbsp;    data: 待发送 Key/value 参数<br>
+        &nbsp;&nbsp;    success: 载入成功时回调函数<br>
+         &nbsp;&nbsp;   dataType: 返回内容格式，xml, json, script, text, html<br>
+         3.jQuery.ajax(...)<br>
+         &nbsp;     部分参数：<br>
+         &nbsp;&nbsp;      url：请求地址<br>
+         &nbsp;&nbsp;      type：请求方式，GET、POST（1.9.0之后用method）<br>
+         &nbsp;&nbsp;    headers：请求头<br>
+       &nbsp;&nbsp;      data：要发送的数据<br>
+         &nbsp;&nbsp;    contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")<br>   
+       &nbsp;&nbsp;success：成功之后执行的回调函数(全局)<br>
+       &nbsp;&nbsp;    error：失败之后执行的回调函数(全局)<br>
+         &nbsp;&nbsp;  dataType：将服务器端返回的数据转换成指定类型<br>
+         &nbsp;&nbsp;  "xml": 将服务器端返回的内容转换成xml格式<br>
+         &nbsp;&nbsp;  "text": 将服务器端返回的内容转换成普通文本格式<br>
+         &nbsp;&nbsp;   "html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。<br>
+         &nbsp;&nbsp;  "script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式<br>
+          &nbsp;&nbsp;   "json": 将服务器端返回的内容转换成相应的JavaScript对象<br>
+       </code></pre>
+
  <p>举个例子</p>
-    <code> ${function(){<br>
+    <pre><code> ${function(){<br>
         &nbsp;  $.ajax({<br>
             &nbsp;   &nbsp; url: "http://****.com:8000/test/",  // 访问url地址<br>
             &nbsp; &nbsp;  type: 'GET',            // get方式提交<br>
@@ -184,7 +242,7 @@
                 &nbsp; &nbsp;      console.log(data);<Br>
                 &nbsp; &nbsp;   }<Br>
                 &nbsp;  })<br>
-         }}</code>
+         }}</code></pre>
 <p>参考来源：<a href="https://blog.csdn.net/weixin_38047955/article/details/70039536" target="_blank" rel="noopener">Ajax学习</a><br>
 <p style="text-align:center;color:gray;">-------本文结束 ❤ 感谢您的阅读-------</p>
             </div>
